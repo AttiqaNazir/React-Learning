@@ -1,15 +1,14 @@
-import { useState } from "react";
 
-const Counter = () => {
-    const [count, setCount] = useState(0);
-    
-    const handleOnClick = () => {
-        setCount(count+1)
-    }
+type Props = {
+    counter: number;
+    handleOnClick: () => void
+}
 
+const Counter = (props: Props) => {
+   
     return (
-        <button onClick={handleOnClick}  >
-            clicked {count} times!
+        <button onClick={props.handleOnClick}  >
+            clicked {props.counter} times!
         </button>
     )
 }
